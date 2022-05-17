@@ -6,7 +6,8 @@
 	</head>
 	<body>
 		<div layout:fragment="conteudo">
-			<form th:action="@{/pedido/cadastrar}" th:object="${pedido}" method="post">
+		<div class="container"><br>
+			<form class="p-2 p-md-2 border rounded-2 bg-light" th:action="@{/pedido/cadastrar}" th:object="${pedido}" method="post">
 				<div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
 					<p th:if="${#fields.hasErrors('*')}" class="text text-danger" th:errors="*{*}"></p>
 				</div>
@@ -20,7 +21,7 @@
 					<input th:field="*{telefone}" id="telefone" class="form-control">
 				</div>
 				<div class="form-group">
-					<label for="rua">Rua</label>
+					<label for="rua">Rua/Avenida</label>
 					<input th:field="*{rua}" id="rua" class="form-control">
 				</div>
 				<div class="form-group">
@@ -40,19 +41,20 @@
 					<option value="">Selecione</option>
 					<option th:each="c:${cardapios}"
 								th:value="${c.codigo}" th:text="${c.nome}"></option>
-				</select>
+				</select><br>
 				<label for="pagamento">Forma de Pagamento</label>
 				<select th:field="*{pagamento}" id="pagamento" class="form-control">
 					<option value="">Selecione</option>
 					<option th:each="c:${pagamentos}"
 								th:value="${c.codigo}" th:text="${c.nome}"></option>
-				</select>
+				</select><br>
 				<div class="form-group">
 					<label for="observacao">Informação Adicional</label>
 					<input th:field="*{observacao}" id="observacao" class="form-control">
 				</div>
 				<button class="btn btn-success">Cadastrar</button>
 			</form>
+		</div>
 		</div>
 		<div layout:fragment="rodape">
 		</div>

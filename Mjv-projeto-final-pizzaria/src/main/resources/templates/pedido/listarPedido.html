@@ -6,6 +6,9 @@
 	</head>
 	<body>
 		<div layout:fragment="conteudo">
+			<br>
+			<div class="container">
+			<form class="p-2 p-md-2 border rounded-2 bg-light">
 			<div class="alert alert-success" th:if="${msg !=null}" th:text="${msg}"></div>
 			<div class="alert alert-danger" th:if="${err !=null}" th:text="${err}"></div>
 			<table class="table">
@@ -33,6 +36,7 @@
 					</td>
 				</tr>
 			</table>
+			</form>
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -53,6 +57,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<div layout:fragment="rodape">
 		</div>

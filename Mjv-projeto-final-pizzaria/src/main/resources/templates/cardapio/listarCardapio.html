@@ -6,6 +6,8 @@
 	</head>
 	<body>
 		<div layout:fragment="conteudo">
+		  <div class="container"><br>
+<!-- 		   <form class="p-2 p-md-2 border rounded-2 bg-light"> -->
 			<div class="alert alert-success" th:if="${msg !=null}" th:text="${msg}"></div>
 			<table class="table">
 				<tr>
@@ -21,6 +23,8 @@
 					<td></td>
 				</tr>
 			</table>
+<!-- 			</form> -->
+		   </div>
 		</div>
 		<div layout:fragment="rodape">
 		</div>

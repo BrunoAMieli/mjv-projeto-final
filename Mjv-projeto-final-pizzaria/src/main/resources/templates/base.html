@@ -2,16 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 		<meta charset="UTF-8">
-		<title layout:title-pattern="$LAYOUT_TITLE | $CONTENT_TITLE">MJV PIZZAS</title>
+		<title layout:title-pattern="$LAYOUT_TITLE | $CONTENT_TITLE">Pizzaria MJV</title>
 		<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
 	</head>
 	<body>
-		<h1>Pizzaria</h1>
-		<div class="container">
-			<div layout:fragment="conteudo"></div>
+		<header class="py-1 mb-1 bg-light text-secondary border-bottom">
+		  <div class="container d-flex flex-wrap justify-content-center">
+		    <ul class="nav">
+		        <li class="nav-link"><a href="/pedido/home" class="font-weight-bold"><button type="button" class="btn btn-light font-weight-bold text-dark me-2">Pizzaria MJV</button></a></li>
+		    </ul>
+		  </div>
+		</header>
+		<nav class="py-0 mb-0 bg-muted border-bottom">
+		  <div class="container d-flex flex-wrap">
+		    <ul class="nav mr-auto">
+		      <li class="nav-link"><a href="/pedido/cardapio" class="nav-link link-dark px-2"><button type="button" class="btn btn-light text-dark me-2">Cardápio</button></a></li>
+		<!-- 		        <span class="fs-4">Double header</span> -->
+		    </ul>
+		    <ul class="nav">
+		      <li class="nav-link"><a href="/pedido/listar" class="nav-link link-dark px-2"><button type="button" class="btn btn-light text-dark me-2">Pedidos</button></a></li>
+		      <li class="nav-link"><a href="/pedido/cadastrar" class="nav-link link-dark px-2"><button type="button" class="btn btn-outline-dark">Fazer Pedido</button></a></li>
+		    </ul>
+		  </div>
+		</nav>
+  		<div class="container-fluid">
+			<div layout:fragment="conteudo"></div>		
 		</div>
 		<hr>
 		<div layout:fragment="rodape"></div>
+		  	<footer class="container">
+   			 <p>© 2022 Pizzaria MJV, Todos os Direitos Reservados.
+  			</footer>
 		<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 		<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	</body>
