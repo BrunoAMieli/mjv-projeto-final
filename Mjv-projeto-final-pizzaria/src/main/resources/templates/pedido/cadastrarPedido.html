@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{base}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Fazer Pedido</title>
+	</head>
+	<body>
+		<div layout:fragment="conteudo">
+			<form th:action="@{/pedido/cadastrar}" th:object="${pedido}" method="post">
+				<div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+					<p th:if="${#fields.hasErrors('*')}" class="text text-danger" th:errors="*{*}"></p>
+				</div>
+				<input th:field="*{codigo}" type="hidden">
+				<div class="form-group">
+					<label for="nomeCompleto">Nome Completo</label>
+					<input th:field="*{nomeCompleto}" id="nomeCompleto" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="telefone">Telefone</label>
+					<input th:field="*{telefone}" id="telefone" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="rua">Rua</label>
+					<input th:field="*{rua}" id="rua" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="numero">Número</label>
+					<input th:field="*{numero}" id="numero" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="complemento">Complemento</label>
+					<input th:field="*{complemento}" id="complemento" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="cep">CEP</label>
+					<input th:field="*{cep}" id="cep" class="form-control">
+				</div>
+				<label for="cardapio">Sabor</label>
+				<select th:field="*{cardapio}" id="cardapio" class="form-control">
+					<option value="">Selecione</option>
+					<option th:each="c:${cardapios}"
+								th:value="${c.codigo}" th:text="${c.nome}"></option>
+				</select>
+				<label for="pagamento">Forma de Pagamento</label>
+				<select th:field="*{pagamento}" id="pagamento" class="form-control">
+					<option value="">Selecione</option>
+					<option th:each="c:${pagamentos}"
+								th:value="${c.codigo}" th:text="${c.nome}"></option>
+				</select>
+				<div class="form-group">
+					<label for="observacao">Informação Adicional</label>
+					<input th:field="*{observacao}" id="observacao" class="form-control">
+				</div>
+				<button class="btn btn-success">Cadastrar</button>
+			</form>
+		</div>
+		<div layout:fragment="rodape">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{base}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Pedidos</title>
+	</head>
+	<body>
+		<div layout:fragment="conteudo">
+			<div class="alert alert-success" th:if="${msg !=null}" th:text="${msg}"></div>
+			<div class="alert alert-danger" th:if="${err !=null}" th:text="${err}"></div>
+			<table class="table">
+				<tr>
+					<th>Nome Completo</th>
+					<th>Telefone</th>
+					<th>Rua</th>
+					<th>Número</th>
+					<th>Sabor</th>
+					<th>Observação</th>
+					<th></th>
+				</tr>
+				<tr th:each="ped:${pedidos}">
+					<td th:text="${ped.nomeCompleto}"></td>
+					<td th:text="${ped.telefone}"></td>
+					<td th:text="${ped.rua}"></td>
+					<td th:text="${ped.numero}"></td>
+					<td th:text="${ped.cardapio?.nome}"></td>
+					<td th:text="${ped.observacao}"></td>
+					<td>
+						<button th:onclick="|produtoId.value = ${ped.codigo}|"
+									type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+							Cancelar Pedido
+						</button>
+					</td>
+				</tr>
+			</table>
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Deseja cancelar o pedido?</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form th:action="@{/pedido/excluir}" method="post">
+									<input type="hidden" name="codigo" id="produtoId">
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">Não</button>
+									<button type="submit" class="btn btn-danger">Sim</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div layout:fragment="rodape">
+		</div>
+	</body>
+</html>
