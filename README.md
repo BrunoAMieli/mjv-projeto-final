@@ -4,7 +4,7 @@
 
 - [Bruno Mieli](https://github.com/BrunoAMieli)
 
-Este repositório contém o projeto pfinal na MJV, uma API que representa uma maneira de fazer um pedido de pizza.
+Este repositório contém o projeto final na MJV, uma API que representa uma maneira de fazer um pedido de pizza.
 
 ##### Tecnologias
 
