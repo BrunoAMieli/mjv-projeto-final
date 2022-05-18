@@ -80,6 +80,7 @@ Este repositório contém o projeto final na MJV, uma API que representa uma man
 ##### FRONT-END
 
 * Tela da PÁGINA INICIAL
+<br>
 Endereço da página: http://localhost:8080/pedido/home
 
 <img width="1440" alt="home" src="https://user-images.githubusercontent.com/86811968/168950278-bbf0364a-efc7-4018-bfd1-c9064f976460.png">
@@ -89,16 +90,19 @@ Endereço da página: http://localhost:8080/pedido/home
 <img width="1440" alt="home 3" src="https://user-images.githubusercontent.com/86811968/168950291-239c281f-fffa-43dc-84b4-df196b5649da.png">
 
 * Tela de CARDÁPIO
+<br>
 Endereço da página: http://localhost:8080/pedido/cardapio
 
 <img width="1440" alt="Cardapio" src="https://user-images.githubusercontent.com/86811968/168950326-8190c374-1f45-4279-bc8c-e0d6e5f30855.png">
 
 * Tela de cadastro de PEDIDO DE PIZZA
+<br>
 Endereço da página: http://localhost:8080/pedido/cadastrar
 
 <img width="1440" alt="Fazer Pedido" src="https://user-images.githubusercontent.com/86811968/168950362-0382d001-5c7c-4791-bd63-ee949e13e93f.png">
 
 * Tela de listagem de PEDIDOS
+<br>
 Endereço da página: http://localhost:8080/pedido/listar
 
 <img width="1440" alt="Pedidos" src="https://user-images.githubusercontent.com/86811968/168950383-b7661394-2496-409d-8c17-6b264b0d9b71.png">
