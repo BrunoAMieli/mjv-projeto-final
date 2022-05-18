@@ -1,5 +1,9 @@
 package br.com.mjv.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +13,8 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 import lombok.Data;
@@ -27,6 +33,7 @@ public class Pedido {
 	@NotNull
 	private String nomeCompleto;
 	
+	@NotBlank(message = "Digite o número de telefone.")
 	@NotNull
 	private String telefone;
 	
@@ -54,4 +61,28 @@ public class Pedido {
 	
 	@Size(max = 300)
 	private String observacao;
+	
+	@JsonIgnore
+	private LocalDate timeDate = LocalDate.now();
+	
+	@JsonIgnore
+	private LocalTime time = LocalTime.now();
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pedido other = (Pedido) obj;
+		return codigo == other.codigo;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigo);
+	}
+	
 }

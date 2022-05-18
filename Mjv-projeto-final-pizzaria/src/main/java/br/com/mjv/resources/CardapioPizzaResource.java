@@ -38,7 +38,7 @@ public class CardapioPizzaResource {
     @PostMapping 
     public CardapioPizza cadastrar(@RequestBody CardapioPizza produto) { 
         return cardapioRepository.save(produto); 
-    } 
+    }
 
     @PutMapping("{id}") 
     public CardapioPizza atualizar(@RequestBody CardapioPizza produto, @PathVariable int id) { 

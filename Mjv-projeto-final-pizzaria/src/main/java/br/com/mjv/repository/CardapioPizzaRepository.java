@@ -8,4 +8,5 @@ import br.com.mjv.model.CardapioPizza;
 public interface CardapioPizzaRepository extends JpaRepository<CardapioPizza, Integer>{
 
 	List<CardapioPizza> findByNome(String card);
+
 }
