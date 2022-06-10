@@ -15,6 +15,7 @@ Este repositório contém o projeto final na MJV, uma API que representa uma man
 * HTML;
 * CSS;
 * Spring Boot;
+* Spring Web MVC;
 * Swagger.
 
 ##### Apresentação
